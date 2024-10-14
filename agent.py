@@ -13,6 +13,9 @@ from livekit.agents.pipeline import VoicePipelineAgent
 from livekit.plugins import openai, deepgram, silero
 from livekit.agents.pipeline import AgentTranscriptionOptions
 
+from assistant_functions import fnc_ctx  # Import the function context
+
+
 
 load_dotenv(dotenv_path=".env.local")
 logger = logging.getLogger("voice-agent")
@@ -55,6 +58,7 @@ async def entrypoint(ctx: JobContext):
             user_transcription=True,
             agent_transcription=True
         ),
+        fnc_ctx=fnc_ctx,
     )
 
     assistant.start(ctx.room, participant)
