@@ -52,7 +52,7 @@ async def entrypoint(ctx: JobContext):
         # stt=openai.STT(base_url="ws://localhost:8000/v1", model="Systran/faster-whisper-tiny.en"),
         # llm=openai.LLM(model="llama3.2:3b", base_url="http://localhost:11434/v1"),
         llm=openai.LLM(model="gpt-4o-mini"),
-        tts=openai.TTS(voice="nova"),
+        tts=openai.TTS(voice="shimmer"),
         chat_ctx=initial_ctx,
         transcription=AgentTranscriptionOptions(
             user_transcription=True,
